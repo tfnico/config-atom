@@ -1,0 +1,27 @@
+'exception-reporting':
+  'userId': '117deb7a-a1a7-2f40-1008-465fdf7e53c3'
+'release-notes':
+  'viewedVersion': '0.71.0'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': '7eb29c4da79a364492b34a1295b0607417b22df6'
+'editor':
+  'fontSize': 16
+  'showIndentGuide': true
+'core':
+  'themes': [
+    'atom-dark-ui'
+    'solarized-dark-syntax'
+  ]
+  'ignoredNames': [
+    '.git'
+    '.svn'
+    '.DS_Store'
+  ]
+  'projectHome': '/Users/tfnico/projects'
+  'disabledPackages': [
+    'vim-mode'
+  ]
+'autosave':
+  'enabled': true
