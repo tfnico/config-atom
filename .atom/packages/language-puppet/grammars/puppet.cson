@@ -1,3 +1,4 @@
+'scopeName': 'source.puppet'
 'fileTypes': [
   'pp'
 ]
@@ -7,6 +8,9 @@
 'patterns': [
   {
     'include': '#line_comment'
+  }
+  {
+    'include': '#constants'
   }
   {
     'begin': '^\\s*/\\*'
@@ -93,7 +97,7 @@
     'name': 'meta.definition.resource.puppet'
   }
   {
-    'match': '\\b(case|if|else)(?!::)'
+    'match': '\\b(case|if|else)(?!::)\\b'
     'name': 'keyword.control.puppet'
   }
   {
@@ -123,7 +127,7 @@
     'name': 'constant.other.bareword.puppet'
   }
   {
-    'match': '\\b(escape|gsub|alert|crit|debug|notice|defined|emerg|err|failed|file|generate|include|info|realize|search|tag|tagged|template|warning)\\b'
+    'match': '(?i)\\b(alert|crit|debug|defined|emerg|err|escape|fail|failed|file|generate|gsub|include|info|notice|package|realize|search|tag|tagged|template|warning)\\b'
     'name': 'support.function.puppet'
   }
 ]
@@ -131,8 +135,8 @@
   'constants':
     'patterns': [
       {
-        'match': '(?i)\\b(false|true|running|present|absent|file|directory)\\b'
-        'name': 'constant.language.php'
+        'match': '(?i)\\b(absent|directory|false|file|present|running|stopped|true)\\b'
+        'name': 'constant.language.puppet'
       }
     ]
   'double-quoted-string':
@@ -281,7 +285,7 @@
       }
       {
         'match': '='
-        'name': 'keyword.operator.assignment.php'
+        'name': 'keyword.operator.assignment.puppet'
       }
       {
         'begin': '(\\[)'
@@ -292,7 +296,7 @@
         'endCaptures':
           '0':
             'name': 'punctuation.definition.array.end.puppet'
-        'name': 'meta.array.php'
+        'name': 'meta.array.puppet'
         'patterns': [
           {
             'include': '#parameter-default-types'
@@ -346,4 +350,3 @@
         'name': 'variable.other.readwrite.global.puppet'
       }
     ]
-'scopeName': 'source.puppet'

@@ -1,8 +1,12 @@
 {EditorView} = require 'atom'
-
 VimState = require '../lib/vim-state'
+VimMode  = require '../lib/vim-mode'
 
 originalKeymap = null
+
+beforeEach ->
+  atom.workspace ||= {}
+  VimMode._initializeWorkspaceState()
 
 cacheEditor = (existingEditorView) ->
   session = atom.project.openSync()
@@ -19,12 +23,18 @@ cacheEditor = (existingEditorView) ->
     editorView.addClass('vim-mode')
     editorView.vimState = new VimState(editorView)
 
-  existingEditorView or editorView
+  view = existingEditorView or editorView
+  history = view.editor.buffer.history
+  history.abortTransaction() if history.currentTransaction?
+  history.clearUndoStack()
+  view
 
-keydown = (key, {element, ctrl, shift, alt, meta}={}) ->
+keydown = (key, {element, ctrl, shift, alt, meta, raw}={}) ->
   dispatchKeyboardEvent = (target, eventArgs...) ->
     e = document.createEvent('KeyboardEvent')
     e.initKeyboardEvent eventArgs...
+    # 0 is the default, and it's valid ASCII, but it's wrong.
+    Object.defineProperty(e, 'keyCode', get: -> undefined) if e.keyCode is 0
     target.dispatchEvent e
 
   dispatchTextEvent = (target, eventArgs...) ->
@@ -32,7 +42,7 @@ keydown = (key, {element, ctrl, shift, alt, meta}={}) ->
     e.initTextEvent eventArgs...
     target.dispatchEvent e
 
-  key = "U+#{key.charCodeAt(0).toString(16)}" unless key == 'escape'
+  key = "U+#{key.charCodeAt(0).toString(16)}" unless key == 'escape' || raw?
   element ||= document.activeElement
   eventArgs = [true, true, null, key, 0, ctrl, alt, shift, meta] # bubbles, cancelable, view, key, location
 

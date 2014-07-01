@@ -3,6 +3,7 @@
 * [w](http://vimhelp.appspot.com/motion.txt.html#w)
 * [W](http://vimhelp.appspot.com/motion.txt.html#W)
 * [e](http://vimhelp.appspot.com/motion.txt.html#e)
+* [E](http://vimhelp.appspot.com/motion.txt.html#E)
 * [b](http://vimhelp.appspot.com/motion.txt.html#b)
 * [B](http://vimhelp.appspot.com/motion.txt.html#B)
 * [h](http://vimhelp.appspot.com/motion.txt.html#h)
@@ -21,3 +22,5 @@
 * [H](http://vimhelp.appspot.com/motion.txt.html#H)
 * [L](http://vimhelp.appspot.com/motion.txt.html#L)
 * [M](http://vimhelp.appspot.com/motion.txt.html#M)
+* ['[a-z][A-Z]](http://vimhelp.appspot.com/motion.txt.html#%27)
+* [`[a-z][A-Z]](http://vimhelp.appspot.com/motion.txt.html#%27)
