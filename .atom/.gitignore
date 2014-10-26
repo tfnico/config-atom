@@ -1,2 +1,3 @@
 /storage/
 /.node-gyp/.atom/.apm/underscore/.cache.json
+/packages/
