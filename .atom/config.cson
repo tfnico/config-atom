@@ -9,6 +9,7 @@
 'editor':
   'showIndentGuide': true
   'tabLength': 4
+  'fontSize': 15
 'core':
   'themes': [
     'atom-dark-ui'
