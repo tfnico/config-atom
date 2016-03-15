@@ -1,25 +1,39 @@
-'exception-reporting':
-  'userId': '117deb7a-a1a7-2f40-1008-465fdf7e53c3'
-'release-notes':
-  'viewedVersion': '0.90.0'
-'welcome':
-  'showOnStartup': false
-'metrics':
-  'userId': '7eb29c4da79a364492b34a1295b0607417b22df6'
-'editor':
-  'showIndentGuide': true
-  'tabLength': 4
-  'fontSize': 15
-'core':
-  'themes': [
-    'atom-dark-ui'
-    'solarized-dark-syntax'
-  ]
-  'projectHome': '/Users/tfnico/projects'
-  'disabledPackages': [
-    'vim-mode'
-  ]
-'autosave':
-  'enabled': true
-'xml-formatter':
-  'spaces_indent': 4
+"*":
+  autosave:
+    enabled: true
+  core:
+    disabledPackages: [
+      "vim-mode"
+      "minimap"
+      "linter-puppet-lint"
+    ]
+    projectHome: "/Users/tfnico/projects"
+    themes: [
+      "atom-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontFamily: "Hack"
+    fontSize: 15
+    invisibles: {}
+    showIndentGuide: true
+    tabLength: 4
+    tabType: "hard"
+  "exception-reporting":
+    userId: "117deb7a-a1a7-2f40-1008-465fdf7e53c3"
+  "linter-puppet-lint":
+    oldVersion: true
+  metrics:
+    userId: "7eb29c4da79a364492b34a1295b0607417b22df6"
+  racer:
+    racerBinPath: "/Users/tfnico/projects/racer/target/release/racer"
+    rustSrcPath: "/Users/tfnico/src/rustc-1.2.0/src"
+  "release-notes":
+    viewedVersion: "0.90.0"
+  welcome:
+    showOnStartup: false
+  "xml-formatter":
+    spaces_indent: 4
+".puppet.source":
+  editor:
+    tabLength: 2
